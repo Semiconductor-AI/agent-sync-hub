@@ -7,6 +7,7 @@
   <a href="https://github.com/Semiconductor-AI/agent-sync-hub/actions/workflows/ci.yml"><img alt="CI" src="https://img.shields.io/github/actions/workflow/status/Semiconductor-AI/agent-sync-hub/ci.yml?branch=main&style=flat-square&label=CI"></a>
   <a href="LICENSE"><img alt="MIT License" src="https://img.shields.io/badge/license-MIT-32c991?style=flat-square"></a>
   <img alt="Local first" src="https://img.shields.io/badge/data-local--only-8574ff?style=flat-square">
+  <a href="https://openai.com/codex/"><img alt="Built with OpenAI Codex" src="https://img.shields.io/badge/Built_with-OpenAI_Codex-000000?style=flat-square&amp;logo=openai&amp;logoColor=white"></a>
 </p>
 
 <p align="center"><strong>English</strong> · <a href="README.zh-CN.md">简体中文</a></p>
@@ -151,6 +152,12 @@ Read [CONTRIBUTING.md](CONTRIBUTING.md) before opening a pull request. Changes t
 ## Design references
 
 The README information architecture was informed by established open-source agent and MCP projects including [Claude Code Router](https://github.com/musistudio/claude-code-router), [MCP Router](https://github.com/mcp-router/mcp-router), [Mission Control](https://github.com/builderz-labs/mission-control), [Claude Code Haha](https://github.com/NanmiCoder/cc-haha), and [AI Agent Skills](https://github.com/MoizIbnYousaf/Ai-Agent-Skills). Agent Sync Hub's wording, scope, implementation, and safety model are its own.
+
+## Built with OpenAI Codex
+
+Agent Sync Hub was designed, implemented, tested, documented, packaged, and published with assistance from [OpenAI Codex](https://openai.com/codex/) under the direction and review of the `Semiconductor-AI` maintainer. Codex was used as the project's development agent and collaboration tool.
+
+This statement describes the development workflow. It does not imply that OpenAI officially sponsors, endorses, maintains, or provides support for this project. OpenAI and Codex are trademarks of their respective owner.
 
 ## License
 

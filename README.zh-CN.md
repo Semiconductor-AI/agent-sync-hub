@@ -7,6 +7,7 @@
   <a href="https://github.com/Semiconductor-AI/agent-sync-hub/actions/workflows/ci.yml"><img alt="持续集成" src="https://img.shields.io/github/actions/workflow/status/Semiconductor-AI/agent-sync-hub/ci.yml?branch=main&style=flat-square&label=CI"></a>
   <a href="LICENSE"><img alt="MIT 许可证" src="https://img.shields.io/badge/license-MIT-32c991?style=flat-square"></a>
   <img alt="本地优先" src="https://img.shields.io/badge/data-local--only-8574ff?style=flat-square">
+  <a href="https://openai.com/codex/"><img alt="使用 OpenAI Codex 构建" src="https://img.shields.io/badge/Built_with-OpenAI_Codex-000000?style=flat-square&amp;logo=openai&amp;logoColor=white"></a>
 </p>
 
 <p align="center"><a href="README.md">English</a> · <strong>简体中文</strong></p>
@@ -151,6 +152,12 @@ npm start
 ## 设计参考
 
 README 的信息架构参考了成熟的开源 Agent 与 MCP 项目，包括 [Claude Code Router](https://github.com/musistudio/claude-code-router)、[MCP Router](https://github.com/mcp-router/mcp-router)、[Mission Control](https://github.com/builderz-labs/mission-control)、[Claude Code Haha](https://github.com/NanmiCoder/cc-haha) 与 [AI Agent Skills](https://github.com/MoizIbnYousaf/Ai-Agent-Skills)。Agent Sync Hub 的文字、功能边界、实现与安全模型均为独立设计。
+
+## 使用 OpenAI Codex 构建
+
+Agent Sync Hub 在 `Semiconductor-AI` 维护者的指导与审核下，使用 [OpenAI Codex](https://openai.com/codex/) 辅助完成了架构设计、代码实现、测试、文档、安装包构建与项目发布。Codex 是本项目使用的开发 Agent 和协作工具。
+
+这段说明仅用于如实描述项目的开发方式，并不表示 OpenAI 官方赞助、认可、维护本项目或为本项目提供支持。OpenAI 与 Codex 商标归其各自权利人所有。
 
 ## 许可证
 
