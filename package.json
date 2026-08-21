@@ -10,10 +10,10 @@
     "start": "electron .",
     "check": "node --check electron/main.js && node --check electron/preload.js && node --check src/i18n.js && node --check src/app.js && node --test test/*.test.js",
     "pack": "electron-builder --dir",
-    "dist:win:x64": "electron-builder --win nsis --x64",
-    "dist:win:arm64": "electron-builder --win nsis --arm64",
-    "dist:mac:x64": "electron-builder --mac dmg zip --x64",
-    "dist:mac:arm64": "electron-builder --mac dmg zip --arm64"
+    "dist:win:x64": "electron-builder --win nsis --x64 --publish never",
+    "dist:win:arm64": "electron-builder --win nsis --arm64 --publish never",
+    "dist:mac:x64": "electron-builder --mac dmg zip --x64 --publish never",
+    "dist:mac:arm64": "electron-builder --mac dmg zip --arm64 --publish never"
   },
   "devDependencies": {
     "electron": "43.4.1",
