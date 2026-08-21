@@ -1,0 +1,39 @@
+{
+  "name": "agent-sync-hub",
+  "version": "0.1.0",
+  "description": "Local-first control plane for skills, MCP servers, hooks, and memory across coding agents.",
+  "main": "electron/main.js",
+  "author": "Semiconductor-AI and contributors",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "start": "electron .",
+    "check": "node --check electron/main.js && node --check electron/preload.js && node --check src/i18n.js && node --check src/app.js && node --test test/*.test.js",
+    "pack": "electron-builder --dir",
+    "dist:win:x64": "electron-builder --win nsis --x64",
+    "dist:win:arm64": "electron-builder --win nsis --arm64",
+    "dist:mac:x64": "electron-builder --mac dmg zip --x64",
+    "dist:mac:arm64": "electron-builder --mac dmg zip --arm64"
+  },
+  "devDependencies": {
+    "electron": "43.4.1",
+    "electron-builder": "26.15.3"
+  },
+  "build": {
+    "appId": "io.github.semiconductor-ai.agent-sync-hub",
+    "productName": "Agent Sync Hub",
+    "asar": true,
+    "directories": {"output": "release"},
+    "files": ["electron/**/*", "src/**/*", "core/**/*", "package.json", "LICENSE", "NOTICE"],
+    "win": {
+      "target": [{"target": "nsis", "arch": ["x64", "arm64"]}],
+      "artifactName": "Agent-Sync-Hub-${version}-Windows-${arch}.${ext}"
+    },
+    "nsis": {"oneClick": false, "allowToChangeInstallationDirectory": true, "createDesktopShortcut": true},
+    "mac": {
+      "target": [{"target": "dmg", "arch": ["x64", "arm64"]}, {"target": "zip", "arch": ["x64", "arm64"]}],
+      "category": "public.app-category.developer-tools",
+      "artifactName": "Agent-Sync-Hub-${version}-macOS-${arch}.${ext}"
+    }
+  }
+}

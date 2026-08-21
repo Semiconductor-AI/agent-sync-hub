@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'">
+  <title>Agent Sync Hub</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="language.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="signal" aria-hidden="true"></span><div><h1>Agent Sync Hub</h1><p data-i18n="tagline">Local agent control plane</p></div></div>
+    <div class="language-switch" role="group" aria-label="Language / 语言"><button class="language-option" data-language="zh-CN" type="button">中文</button><button class="language-option" data-language="en" type="button">English</button></div>
+    <div class="meta" id="runtime">Loading runtime…</div>
+    <button id="scan" data-i18n="scanButton">Scan this computer</button>
+  </header>
+  <main>
+    <section class="thesis">
+      <p class="eyebrow" data-i18n="heroEyebrow">Inventory before synchronization</p>
+      <h2 data-i18n="heroTitle">See what every coding agent can actually reach.</h2>
+      <p data-i18n="heroBody">Agent Sync Hub discovers local agent homes and skills without uploading their contents. The first public release is read-only by design.</p>
+      <div class="scanline"><span id="status" data-i18n="ready">Ready to scan</span><time id="scanned"></time></div>
+    </section>
+    <section class="agent-grid" id="agents" aria-live="polite"></section>
+    <section class="matrix-card">
+      <div class="section-head"><div><p class="eyebrow" data-i18n="matrixEyebrow">Skill matrix</p><h3 data-i18n="matrixTitle">Availability across agents</h3></div><input id="filter" type="search" data-i18n-placeholder="filterPlaceholder" data-i18n-aria="filterPlaceholder" placeholder="Filter skills" aria-label="Filter skills"></div>
+      <div class="matrix-wrap"><table><thead id="matrix-head"></thead><tbody id="matrix-body"><tr><td class="empty" data-i18n="emptyInitial">Run a scan to build the local matrix.</td></tr></tbody></table></div>
+    </section>
+  </main>
+  <script src="i18n.js"></script><script src="app.js"></script>
+</body>
+</html>

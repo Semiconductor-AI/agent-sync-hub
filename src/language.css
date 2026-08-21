@@ -1,0 +1,7 @@
+.language-switch { display: flex; padding: 3px; border: 1px solid var(--line); border-radius: 8px; background: #0a1018; }
+.language-option { padding: 6px 9px; background: transparent; color: var(--muted); font-size: 11px; }
+.language-option.active { background: #253149; color: var(--ink); }
+@media (max-width: 800px) {
+  .topbar { height: auto; min-height: 76px; padding-block: 10px; gap: 10px; flex-wrap: wrap; }
+  .language-switch { order: 3; margin-left: auto; }
+}

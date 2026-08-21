@@ -1,0 +1,27 @@
+name: Bug report
+description: Report a reproducible problem without sharing private agent data.
+title: "[Bug]: "
+labels: [bug, needs-triage]
+body:
+  - type: markdown
+    attributes:
+      value: Do not paste API keys, prompts, private configuration, or full home-directory paths.
+  - type: input
+    id: version
+    attributes: {label: Version, placeholder: 0.1.0}
+    validations: {required: true}
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform
+      options: [Windows x64, Windows ARM64, macOS Intel, macOS Apple Silicon, Other]
+    validations: {required: true}
+  - type: textarea
+    id: steps
+    attributes: {label: Reproduction steps}
+    validations: {required: true}
+  - type: textarea
+    id: expected
+    attributes: {label: Expected and actual behavior}
+    validations: {required: true}
+
