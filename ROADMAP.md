@@ -10,6 +10,10 @@
 ## 0.2 — Adapter contracts
 
 - Versioned adapter interface: discover, status, plan, apply, rollback, audit.
+- Target-aware MCP schema conversion is implemented as a fail-closed contract;
+  native entries must never be copied verbatim between different agents.
+- The current syntax matrix and primary references are documented in
+  [`docs/mcp-adapter-compatibility.md`](docs/mcp-adapter-compatibility.md).
 - MCP and hook inventory with secret redaction.
 - Capability labels: immediate, next call, next session, restart, unverifiable.
 
