@@ -9,6 +9,14 @@ test('missing directory is an empty inventory, not a failure', () => {
   assert.deepEqual(safeDirectoryNames(path.join(os.tmpdir(), `missing-${Date.now()}`)), []);
 });
 
+test('non-ENOENT scan errors are wrapped, not swallowed', () => {
+  const file = path.join(os.tmpdir(), `agent-sync-hub-not-a-dir-${Date.now()}.txt`);
+  fs.writeFileSync(file, 'x');
+  try {
+    assert.throws(() => safeDirectoryNames(file), /^Error: Cannot scan /);
+  } finally { fs.rmSync(file, {force: true}); }
+});
+
 test('scanner lists directories only and ignores links', () => {
   const root = fs.mkdtempSync(path.join(os.tmpdir(), 'agent-sync-hub-'));
   try {

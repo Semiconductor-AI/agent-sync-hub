@@ -103,7 +103,13 @@ function adaptMcpConfig(target, config) {
     if (c.startupTimeoutSec !== undefined || c.toolTimeoutSec !== undefined) {
       throw new McpAdapterError(`${target} has no verified equivalent for Codex timeouts`);
     }
-    if (c.timeoutMs !== undefined && target === 'minimax') out.timeout = c.timeoutMs;
+    // minimax is the only target in this group with a verified timeout field.
+    // Dropping the value for the others would emit a config that looks converted
+    // but no longer carries the caller's timeout, so reject instead.
+    if (c.timeoutMs !== undefined) {
+      if (target !== 'minimax') throw new McpAdapterError(`${target} has no verified equivalent for timeout`);
+      out.timeout = c.timeoutMs;
+    }
     return out;
   }
   throw new McpAdapterError(`No MCP adapter registered for target: ${target}`);
