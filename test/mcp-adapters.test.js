@@ -30,6 +30,21 @@ test('unknown targets never receive raw configuration', () => {
     /No MCP adapter registered/);
 });
 
+test('a timeout with no verified target field is rejected, not dropped', () => {
+  for (const target of ['claude', 'workbuddy', 'zcode', 'kimi']) {
+    assert.throws(() => adaptMcpConfig(target, {
+      type: 'http', url: 'https://example.test/mcp', timeout: 30000
+    }), /has no verified equivalent for timeout/, `${target} should fail closed`);
+  }
+});
+
+test('minimax keeps the timeout it has a verified field for', () => {
+  const result = adaptMcpConfig('minimax', {
+    type: 'http', url: 'https://example.test/mcp', timeout: 30000
+  });
+  assert.equal(result.timeout, 30000);
+});
+
 test('toggle fields are target-specific', () => {
   assert.equal(toggleField.zcode, 'enable');
   assert.equal(toggleField.codex, 'enabled');
